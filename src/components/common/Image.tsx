@@ -9,29 +9,21 @@ type Photo = {
     user: { username: string }
 }
 
-const openInNewTab = (url: string) => {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-    if (newWindow) newWindow.opener = null
-  }
-
 export const Image: React.FC<{ photo: Photo }> = ({ photo }) => {
-    const { id, user, urls, likes } = photo
+    const { user, urls, likes } = photo
 
     return (
-        <div 
-            key={id} 
-            className="image-item"
-            onClick={() => openInNewTab(urls.full)}
-        >
+        <>
             <img 
                 src={urls.small}
                 alt=""
                 loading="lazy"
+                className="image-item img"
             />
             <Overlay
                 likes={likes}
                 username={user.username}
             />
-        </div>
+        </>
     )
 } 

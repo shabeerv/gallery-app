@@ -16,13 +16,9 @@ export const login = createAsyncThunk(actionTypes.LOGIN, async ({email, password
     console.log(email, password)
     try {
         const response = await httpClient.post(LOGIN, {email, password})
-        console.log(response)
-        console.log(response.data)
         return response.data
     }
     catch(error) {
         return rejectWithValue(error)
     }
 })
-
-//export const logout = createAction(actionTypes.LOGOUT)

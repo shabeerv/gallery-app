@@ -1,4 +1,13 @@
-const FormInput = ({ onChange, onBlur, value, type, name, className }) => {
+type FormProps = {
+    onChange: (e: any) => void;
+    onBlur: (e: any) => void;
+    value: string
+    type: string
+    name: string
+    className: string
+}
+
+const FormInput = ({ onChange, onBlur, value, type, name, className }: FormProps) => {
     return (
         <>
             <input
