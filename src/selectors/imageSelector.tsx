@@ -1,3 +1,3 @@
-import { RootState } from "../store";
+import { RootState } from '../store'
 
-export const getImage = (state: RootState) => state.image;
+export const getImage = (state: RootState) => state.image

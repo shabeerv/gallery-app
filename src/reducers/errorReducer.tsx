@@ -1,30 +1,30 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 interface IErrorState {
-  latestError: string;
-  [key: string]: string;
+  latestError: string
+  [key: string]: string
 }
 
 const initialState: IErrorState = {
-  latestError: "",
-};
+  latestError: '',
+}
 
 const errorsSlice = createSlice({
-  name: "error",
+  name: 'error',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addMatcher(
       (action) => {
-        return action.type.endsWith("/rejected");
+        return action.type.endsWith('/rejected')
       },
       (state, { payload, type }) => {
-        state.latestError = payload?.data;
-        state[type.replaceAll("/rejected", "")] = payload?.data;
-        return state;
+        state.latestError = payload?.data
+        state[type.replaceAll('/rejected', '')] = payload?.data
+        return state
       }
-    );
+    )
   },
-});
+})
 
-export default errorsSlice.reducer;
+export default errorsSlice.reducer

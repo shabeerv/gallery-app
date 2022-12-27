@@ -18,6 +18,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
+    "redux-mock-store": "^1.5.4",
     "redux-persist": "^6.0.0",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4",
@@ -27,6 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
+    "coverage": "npm test --coverage --watchAll --collectCoverageFrom='src/components/**/*.{ts,tsx}'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,6 +48,20 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/redux-mock-store": "^1.0.3",
+    "eslint-config-prettier": "^8.5.0",
+    "jest-mock-axios": "^4.7.0-beta2",
+    "prettier": "2.8.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslinit"
+    ],
+    "*.{ts,tsx,css,scss": [
+      "prettier"
     ]
   }
 }

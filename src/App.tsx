@@ -1,15 +1,14 @@
-import React from "react";
-import "./App.css";
-import AppRouter from "./AppRouter/AppRouter";
-import Loader from "./components/Loader/Loader";
-import { isLoadingSelector } from "./selectors/statusSelector";
-import loadingList from "./helpers/ActionTracker";
-import { useAppSelector } from "./hooks/useAppSelector";
+import React from 'react'
+import './App.css'
+import AppRouter from './AppRouter/AppRouter'
+import Loader from './components/Loader/Loader'
+import { isLoadingSelector } from './selectors/statusSelector'
+import loadingList from './helpers/ActionTracker'
+import { useAppSelector } from './hooks/useAppSelector'
 
 function App() {
-  const load = useAppSelector((state) => isLoadingSelector(loadingList, state));
+  const load = useAppSelector((state) => isLoadingSelector(loadingList, state))
 
-   
   return (
     <>
       <Loader show={load} />
@@ -17,7 +16,7 @@ function App() {
         <AppRouter />
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

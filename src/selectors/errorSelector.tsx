@@ -1,3 +1,3 @@
-import { RootState } from "../store";
+import { RootState } from '../store'
 
-export const getLatestError = (state: RootState) => state.error.latestError;
+export const getLatestError = (state: RootState) => state.error.latestError

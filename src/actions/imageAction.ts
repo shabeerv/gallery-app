@@ -1,17 +1,19 @@
-import { createAsyncThunk } from "@reduxjs/toolkit"
-import {CONFIG} from '../helpers/constants'
-import axios from "axios"
+import axios from 'axios'
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { CONFIG } from '../helpers/constants'
 
 export const actionTypes = {
-    IMAGE: "image/fetchImages",
-  };
+  IMAGE: 'image/fetchImages',
+}
 
-export const fetchImages = createAsyncThunk(actionTypes.IMAGE, async (_, { rejectWithValue }) => {
-    try{        
-        const response = await axios(CONFIG)
-        return response.data;
+export const fetchImages = createAsyncThunk(
+  actionTypes.IMAGE,
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios(CONFIG)
+      return response.data
+    } catch (error) {
+      return rejectWithValue(error)
     }
-    catch(error) {
-       return rejectWithValue(error);
-    }
-})
+  }
+)

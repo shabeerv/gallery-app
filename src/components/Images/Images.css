@@ -1,90 +1,92 @@
-  .container {
-    padding: 40px 5%;
-  }
+.container {
+  padding: 40px 5%;
+}
 
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-gallery .column {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-item img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) {
   .image-gallery {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
   }
+}
 
-  .image-gallery .column {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+.image-item {
+  position: relative;
+  cursor: pointer;
+}
 
-  .image-item img {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-    height: 100%;
-    object-fit: cover;
-  }
+.logout-button {
+  background-color: #000;
+  border: 0 solid #e5e7eb;
+  box-sizing: border-box;
+  color: #ffff;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 30px;
+}
 
-  @media only screen and (min-width: 768px) {
-    .image-gallery {
-      flex-direction: column;
-    }
-  }
+.logout-button:focus {
+  outline: 0;
+}
 
-  .image-item {
-    position: relative;
-    cursor: pointer;
-  }
+.logout-button:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
 
-  .logout-button {
-    background-color: #000;
-    border: 0 solid #E5E7EB;
-    box-sizing: border-box;
-    color: #ffff;
-    display: flex;
-    font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 700;
-    justify-content: center;
-    line-height: 1.75rem;
-    padding: .75rem 1.65rem;
-    position: relative;
-    text-align: center;
-    text-decoration: none #000000 solid;
-    text-decoration-thickness: auto;
-    width: 100%;
-    max-width: 460px;
-    cursor: pointer;
-    transform: rotate(-2deg);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    margin-top: 30px;
-  }
+.logout-button:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
 
-  .logout-button:focus {
-    outline: 0;
+@media (min-width: 768px) {
+  .button-53 {
+    padding: 0.75rem 3rem;
+    font-size: 1.25rem;
   }
-
-  .logout-button:after {
-    content: '';
-    position: absolute;
-    border: 1px solid #000000;
-    bottom: 4px;
-    left: 4px;
-    width: calc(100% - 1px);
-    height: calc(100% - 1px);
-  }
-
-  .logout-button:hover:after {
-    bottom: 2px;
-    left: 2px;
-  }
-
-  @media (min-width: 768px) {
-    .button-53 {
-      padding: .75rem 3rem;
-      font-size: 1.25rem;
-    }
-  }
+}
